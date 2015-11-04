@@ -1,6 +1,6 @@
 # RenameKeys
 
-Allow renaming of Ruby hash keys, including deeply-nested keys.
+Allow renaming of Ruby hash keys, including deeply-nested keys, by extending (Monkey-Patching) the Ruby core Hash class.
 
 ## Installation
 
