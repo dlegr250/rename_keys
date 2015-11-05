@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RenameKeys do
+describe CoreExtensions::Hash::Keys do
   it "has a version number" do
     expect(RenameKeys::VERSION).not_to be nil
   end
