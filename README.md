@@ -39,16 +39,17 @@ puts renamed_hash #=> { "first" => { "second" => { "charlie" => "third value" } 
 ```
 
 ```
-# Iterating over array of hashes
+# Iterating over array of hashes (does not alter non-hash elements)
 hashes = [
   { "a" => "first" },
   { "b" => "second" },
-  { "c" => "third" }
+  { "c" => "third" },
+  4
 ]
 
 renamed_hashes = hashes.rename_keys({ "a" => "alpha", "b" => "bravo", "c" => "charlie" })
 
-puts renamed_hashes # => [{ "alpha" => "first" }, { "bravo" => "second" }, { "charlie" => "third" }]
+puts renamed_hashes # => [{ "alpha" => "first" }, { "bravo" => "second" }, { "charlie" => "third" }, 4]
 ```
 
 ## Performance
