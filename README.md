@@ -24,18 +24,31 @@ Or install it yourself as:
 # Simple renaming of keys
 h = { "first" => "first value" }
 
-h.rename_keys({ "first" => "a" })
+renamed_hash = h.rename_keys({ "first" => "a" })
 
-puts h #=> { "a" => "first value" }
+puts renamed_hash #=> { "a" => "first value" }
 ```
 
 ```
 # Deep nesting of keys
 h = { "first" => { "second" => { "third" => "third value" } } }
 
-h.rename_keys({ "third" => "charlie" })
+renamed_hash = h.rename_keys({ "third" => "charlie" })
 
-puts h #=> { "first" => { "second" => { "charlie" => "third value" } } }
+puts renamed_hash #=> { "first" => { "second" => { "charlie" => "third value" } } }
+```
+
+```
+# Iterating over array of hashes
+hashes = [
+  { "a" => "first" },
+  { "b" => "second" },
+  { "c" => "third" }
+]
+
+renamed_hashes = hashes.rename_keys({ "a" => "alpha", "b" => "bravo", "c" => "charlie" })
+
+puts renamed_hashes # => [{ "alpha" => "first" }, { "bravo" => "second" }, { "charlie" => "third" }]
 ```
 
 ## Performance
