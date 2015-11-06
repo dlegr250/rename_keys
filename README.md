@@ -38,6 +38,12 @@ h.rename_keys({ "third" => "charlie" })
 puts h #=> { "first" => { "second" => { "charlie" => "third value" } } }
 ```
 
+## Performance
+
+The use case I created this gem for was retrieving small amounts of JSON from external APIs (small as in a JSON object with maybe 50-100 keys).
+I do not know how performant this gem would be if you had, say, 100+ JSON objects, each with 50-100 keys, and you were changing 20+ keys at once.
+If I find that performance is a big necessity, I may optimize it at that point and start doing some benchmarking.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
